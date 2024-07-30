@@ -1,0 +1,53 @@
+<html>
+	<head>
+		<title> Employee Registration</title>
+	</head>
+	
+	<body bgcolor="lightblue">
+		<center><form action="/Employee_regestration" method="post">
+			<lable for="lbl_Name">Name:</lable>
+			<input type="text" id="txtName" name="EmployeeName" placeholder="Enter Full Name" required/>
+			<br><br>
+			
+			<lable for="lbl_Email">Email:</lable>
+			<input type="email" id="txtEmail" name="Email" placeholder="Enter Email" required/>
+			<br><br>
+			
+			<lable for="lbl_Contact">Contact No:</lable>
+			<input type="tel" id="txtContact" name="Contact" placeholder="Enter contact Number" pattern="[0-9]{10}" required/>
+			<br><br>
+			
+			<lable for="lbl_username">Username:</lable>
+			<input type="text" id="txtUsername" name="Username" placeholder="Enter Your username" required/>
+			<br><br>
+			
+			<lable for="lbl_password">Password:</lable>
+			<input type="password" id="txtPassword" name="Password"
+placeholder="Enter Password" required/>
+			<br><br>
+			
+			<lable for="lbl_dob">DOB:</lable>
+			<input type="date" id="txtDOB" name="DOB" placeholder="Enter Date Of Birth" required/>
+			<br><br>
+			
+			<lable for="lbl_age">Age:</lable>
+			<input type="range" id="txtAge" name="Age" min="18" max="100" />
+			<br><br>
+			
+			<lable for="lbl_desgination">Desgination:</lable>
+			<textarea id="txtdesgination" name="Desgination" rows="1" column="10" required/></textarea>
+			<br><br>
+			
+			<lable for="lbl_profile">Profile Pic:</lable>
+			<input type="file" id="txtprofile" name="profilepic" required/>
+			<br><br/>
+			
+			<lable for="lbl_colour">Colour:</lable>
+			<input type="color" id="txtcolour" name="Colour" required/>
+			<br><br>			
+			
+			<input type="SUBMIT" value="Registration"/>
+		</form></center>
+	</body>
+
+</html>
