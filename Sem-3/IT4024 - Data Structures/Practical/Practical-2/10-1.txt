@@ -1,0 +1,154 @@
+#include<iostream>
+#include<math.h>
+using namespace std;
+
+
+int main()
+{
+    int front=0;
+    int rear=0;
+    int size;
+    cout<<"enter the size of CQ :";
+    cin>>size;
+
+    int cq[size];
+    int item;
+    int next=0;
+
+    cout<<"1 for insert to front"<<endl;
+    cout<<"2 for insert item to rear"<<endl;
+    cout<<"3 for remove item to front"<<endl;
+    cout<<"4 for remove item to rear"<<endl;
+    cout<<"5 display"<<endl;
+    cout<<"6 for exit"<<endl;
+
+    while(true)
+    {
+        int choice;
+        cout<<"please enter your choice :";
+        cin>>choice;
+
+        if(choice==6)
+            break;
+
+        switch(choice)
+        {
+            case 1:
+                if(front==1 && rear==size)
+                {
+                    cout<<"deque is full"<<endl;
+                }
+                else
+                {
+                    if(front==0)
+                    {
+                        front=1;
+                        rear=1;
+                    }
+                    else
+                    {
+                        if(front==1)
+                        {
+                            front==size;
+                        }
+                        else
+                        {
+                            front=front-1;
+                        }
+                    }
+                    cout<<"enter the item :";
+                    cin>>item;
+                    cq[rear]=item;
+
+
+                }
+                break;
+
+            case 2:
+                if(front==0)
+                {
+                    front=1;
+                    rear=1;              
+                }
+                else
+                {
+                    next=(rear % size)+1;
+                    if(next!=front)
+                    {
+                        rear=next;
+                    }
+                    else
+                    {
+                        cout<<"queue is full"<<endl;
+                    }
+
+                }
+                
+                cout<<"enter the item :";
+                cin>>item;
+                cq[rear]=item;
+                break;
+
+            case 3:
+                if(front==0)
+                {
+                    cout<<"deque is empty"<<endl;
+                }    
+                else
+                {
+                    item=cq[front];
+                    if(front==rear)
+                    {
+                        front=0;
+                        rear=0;
+                    }
+                    else
+                    {
+                        front=(front % size)+1;
+                    }
+                }
+                break;
+                
+            case 4:
+                if(front==0)
+                {
+                    cout<<"deque is empty"<<endl;
+                }
+                else
+                {
+                    item=cq[rear];
+                    if(rear==1)
+                    {
+                        rear=size;
+                    }
+                    else
+                    {
+                        rear=rear-1;
+                    }
+                }
+                break;
+
+            case 5:
+                if(front==0)
+                {
+                    cout<<"deque is empty"<<endl;
+                }
+                else
+                {
+                    for(int i=front;i<=rear;i++)
+                    {
+                        cout<<cq[i]<<" ";
+                    }
+                 cout<<endl;   
+                } 
+                break;
+
+            case 6:
+                break;    
+
+        }
+
+    }
+
+
+}
